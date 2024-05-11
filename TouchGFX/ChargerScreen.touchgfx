@@ -1,0 +1,165 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Screen1",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_800x480_spotlights.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 293,
+            "Y": 191,
+            "Width": 214,
+            "Height": 150,
+            "RelativeFilename": "__generated\\alternate_theme_images_containers_small_wide_dark.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "chargingText",
+            "X": 327,
+            "Y": 197,
+            "Width": 146,
+            "Height": 36,
+            "TextId": "__SingleUse_KD3T",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 214,
+              "Green": 173,
+              "Blue": 36
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "idleText",
+            "X": 371,
+            "Y": 197,
+            "Width": 58,
+            "Height": 36,
+            "Visible": false,
+            "TextId": "__SingleUse_R93R",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 214,
+              "Green": 173,
+              "Blue": 36
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ImageProgress",
+            "Name": "battProgress",
+            "X": 345,
+            "Y": 240,
+            "Width": 110,
+            "Height": 40,
+            "FileNameProgress": "__generated\\alternate_theme_images_widgets_imageprogress_styled_batteries_battery_large_action.png",
+            "AnchorAtZero": true,
+            "Direction": "Right",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_imageprogress_styled_batteries_battery_large.png",
+            "IndicatorPositionX": 5,
+            "IndicatorPositionY": 5,
+            "IndicatorPositionWidth": 94,
+            "IndicatorPositionHeight": 30,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 42
+          },
+          {
+            "Type": "TextProgress",
+            "Name": "textProgress1",
+            "X": 313,
+            "Y": 286,
+            "Width": 175,
+            "Height": 50,
+            "TextId": "__SingleUse_TZHV",
+            "Color": {
+              "Red": 214,
+              "Green": 173,
+              "Blue": 36
+            },
+            "Preset": "alternate_theme\\presets\\textprogress\\rounded.json",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_textprogress_backgrounds_rounded_light.png",
+            "IndicatorPositionX": 12,
+            "IndicatorPositionY": 10,
+            "IndicatorPositionWidth": 150,
+            "IndicatorPositionHeight": 30,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 42
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bababooey"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "ChargerScreen",
+    "Resolution": {
+      "Width": 800,
+      "Height": 480
+    },
+    "SelectedColorDepth": 24,
+    "StartupScreenName": "Screen1",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      24
+    ],
+    "AvailableLCDs": {
+      "24": "LCDGPU2D"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 800,
+        "Height": 480
+      }
+    ],
+    "PhysicalButtons": [],
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32U5",
+    "SubFamily": "STM32U599/5A9",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m33",
+    "ProjectFile": "../Riverdi_50STM32U5A9.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [
+      "GPU2D"
+    ],
+    "AdditionalFeatures": []
+  },
+  "Version": "4.23.2",
+  "CreatedBy": "4.23.2"
+}
