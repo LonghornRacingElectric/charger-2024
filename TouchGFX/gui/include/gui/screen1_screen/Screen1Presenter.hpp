@@ -35,6 +35,18 @@ public:
       return model->getState();
     }
 
+    float getVoltss(){
+      return model->getVolts();
+    }
+
+    float getCurrent(){
+      return model->getCurr();
+    }
+
+    int getTime(){
+      return model->getTimeRemaining();
+    }
+
 private:
     Screen1Presenter();
 

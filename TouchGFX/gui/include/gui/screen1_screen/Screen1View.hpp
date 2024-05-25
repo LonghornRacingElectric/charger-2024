@@ -15,6 +15,9 @@ public:
 protected:
   void setCharge(int charge);
   void setState(bool charging);
+  void setVoltage(int voltage);
+  void setCurrent(int current);
+  void setTime(int time);
 };
 
 #endif // SCREEN1VIEW_HPP

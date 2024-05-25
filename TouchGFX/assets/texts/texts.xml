@@ -6,6 +6,39 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_ZJIL" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_IA3T" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; Time Remaining (s)</Translation>
+      </Text>
+      <Text Id="__SingleUse_87YX" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Precharging</Translation>
+      </Text>
+      <Text Id="__SingleUse_EOO2" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Shutdown Circuit Open</Translation>
+      </Text>
+      <Text Id="__SingleUse_D10V" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Waiting for Plug</Translation>
+      </Text>
+      <Text Id="__SingleUse_MENF" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Car Not Connected :(</Translation>
+      </Text>
+      <Text Id="__SingleUse_0R8C" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt; %</Translation>
+      </Text>
+      <Text Id="__SingleUse_5M6Q" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_63FB" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; A</Translation>
+      </Text>
+      <Text Id="__SingleUse_IWEA" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_1RCL" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; V</Translation>
+      </Text>
       <Text Id="__SingleUse_TZHV" Alignment="Center" TypographyId="Typography_00">
         <Translation Language="GB">&lt;&gt; %</Translation>
       </Text>
@@ -21,7 +54,7 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0-9, A-Z" WidgetWildcardCharacters="0123456789." />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography_00" Font="verdanaz.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789." />

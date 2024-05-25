@@ -14,6 +14,14 @@
 
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
+#include <gui/screen2_screen/Screen2View.hpp>
+#include <gui/screen2_screen/Screen2Presenter.hpp>
+#include <gui/screen3_screen/Screen3View.hpp>
+#include <gui/screen3_screen/Screen3Presenter.hpp>
+#include <gui/screen4_screen/Screen4View.hpp>
+#include <gui/screen4_screen/Screen4Presenter.hpp>
+#include <gui/screen5_screen/Screen5View.hpp>
+#include <gui/screen5_screen/Screen5Presenter.hpp>
 
 
 /**
@@ -37,7 +45,11 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< Screen1View,
-            touchgfx::meta::Nil
+            touchgfx::meta::TypeList< Screen2View,
+            touchgfx::meta::TypeList< Screen3View,
+            touchgfx::meta::TypeList< Screen4View,
+            touchgfx::meta::TypeList< Screen5View,
+            touchgfx::meta::Nil > > > >
             > GeneratedViewTypes;
 
     /**
@@ -50,7 +62,11 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< Screen1Presenter,
-            touchgfx::meta::Nil
+            touchgfx::meta::TypeList< Screen2Presenter,
+            touchgfx::meta::TypeList< Screen3Presenter,
+            touchgfx::meta::TypeList< Screen4Presenter,
+            touchgfx::meta::TypeList< Screen5Presenter,
+            touchgfx::meta::Nil > > > >
             > GeneratedPresenterTypes;
 
     /**
@@ -73,7 +89,7 @@ public:
 
     virtual void gotoStartScreen(FrontendApplication& app)
     {
-        app.gotoScreen1ScreenNoTransition();
+        app.gotoScreen2ScreenNoTransition();
     }
 protected:
     FrontendHeapBase(touchgfx::AbstractPartition& presenters, touchgfx::AbstractPartition& views, touchgfx::AbstractPartition& transitions, FrontendApplication& app)

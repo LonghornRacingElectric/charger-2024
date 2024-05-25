@@ -51,6 +51,47 @@ Screen1ViewBase::Screen1ViewBase()
     textProgress1.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TEXTPROGRESS_BACKGROUNDS_ROUNDED_LIGHT_ID));
     textProgress1.setValue(42);
     add(textProgress1);
+
+    textArea1.setPosition(176, 240, 106, 63);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1.setLinespacing(0);
+    Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_IWEA).getText());
+    textArea1.setWildcard(textArea1Buffer);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1RCL));
+    add(textArea1);
+
+    textArea2.setPosition(521, 256, 137, 24);
+    textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea2.setLinespacing(0);
+    Unicode::snprintf(textArea2Buffer, TEXTAREA2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_5M6Q).getText());
+    textArea2.setWildcard(textArea2Buffer);
+    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_63FB));
+    add(textArea2);
+
+    textProgress2.setXY(118, 171);
+    textProgress2.setProgressIndicatorPosition(12, 10, 150, 30);
+    textProgress2.setRange(0, 400);
+    textProgress2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textProgress2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0R8C));
+    textProgress2.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TEXTPROGRESS_BACKGROUNDS_ROUNDED_LIGHT_ID));
+    textProgress2.setValue(60);
+    textProgress2.setAlpha(0);
+    add(textProgress2);
+
+    textArea3.setXY(299, 373);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3.setLinespacing(0);
+    textArea3Buffer[0] = 0;
+    textArea3.setWildcard(textArea3Buffer);
+    textArea3.resizeToCurrentText();
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IA3T));
+    add(textArea3);
+
+    textArea4.setXY(190, 291);
+    textArea4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea4.setLinespacing(0);
+    textArea4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZJIL));
+    add(textArea4);
 }
 
 Screen1ViewBase::~Screen1ViewBase()

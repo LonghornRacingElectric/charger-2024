@@ -45,7 +45,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -90,7 +89,9 @@ static void MX_NVIC_Init(void);
   */
 int main(void)
 {
+  
   /* USER CODE BEGIN 1 */
+
 
   /* USER CODE END 1 */
 

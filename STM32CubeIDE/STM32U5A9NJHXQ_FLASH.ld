@@ -22,7 +22,7 @@
 *****************************************************************************
 ** @attention
 **
-** Copyright (c) 2023 STMicroelectronics.
+** Copyright (c) 2024 STMicroelectronics.
 ** All rights reserved.
 **
 ** This software is licensed under terms that can be found in the LICENSE file
@@ -44,11 +44,9 @@ _Min_Stack_Size = 0x8000; /* required amount of stack */
 /* Memories definition */
 MEMORY
 {
-  FB_RAM (xrw)  : ORIGIN = 0x20000000, LENGTH = 2250K /*double 24bit buffer 800x480*/
-  RAM (xrw)   : ORIGIN = 0x20232800, LENGTH = 246K
+  RAM (xrw)   : ORIGIN = 0x20000000, LENGTH = 2496K
   SRAM4 (xrw) : ORIGIN = 0x28000000, LENGTH = 16K
   FLASH (rx)  : ORIGIN = 0x08000000, LENGTH = 4096K
-  OSPI (rw)	  : ORIGIN = 0x90000000, LENGTH = 64M
 }
 
 /* Sections */
@@ -82,26 +80,25 @@ SECTIONS
     *(.rodata*)        /* .rodata* sections (constants, strings, etc.) */
   } >FLASH
 
-  .ARM.extab :
+  .ARM.extab (READONLY) : /* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
   {
     *(.ARM.extab* .gnu.linkonce.armextab.*)
   } >FLASH
-
-  .ARM :
+  .ARM (READONLY) : /* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
   {
     __exidx_start = .;
     *(.ARM.exidx*)
     __exidx_end = .;
   } >FLASH
 
-  .preinit_array :
+  .preinit_array (READONLY) : /* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
   {
     PROVIDE_HIDDEN (__preinit_array_start = .);
     KEEP (*(.preinit_array*))
     PROVIDE_HIDDEN (__preinit_array_end = .);
   } >FLASH
 
-  .init_array :
+  .init_array (READONLY) : /* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
   {
     PROVIDE_HIDDEN (__init_array_start = .);
     KEEP (*(SORT(.init_array.*)))
@@ -109,7 +106,7 @@ SECTIONS
     PROVIDE_HIDDEN (__init_array_end = .);
   } >FLASH
 
-  .fini_array :
+  .fini_array (READONLY) : /* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
   {
     PROVIDE_HIDDEN (__fini_array_start = .);
     KEEP (*(SORT(.fini_array.*)))
@@ -166,19 +163,4 @@ SECTIONS
   }
 
   .ARM.attributes 0 : { *(.ARM.attributes) }
-  
-FramebufferSection (NOLOAD) :
-  {
-    *(TouchGFX_Framebuffer TouchGFX_Framebuffer.*)
-    *(.gnu.linkonce.r.*)
-    . = ALIGN(0x4);
-  } >FB_RAM
-  
-ExtFlashSection :
-  {
-    *(ExtFlashSection ExtFlashSection.*)
-    *(.gnu.linkonce.r.*)
-    . = ALIGN(0x4);
-  } >OSPI
-  
 }

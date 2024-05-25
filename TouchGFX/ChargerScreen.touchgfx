@@ -92,6 +92,105 @@
             "IndicatorPositionHeight": 30,
             "ProgressRangeMax": 100,
             "ProgressInitialValue": 42
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 176,
+            "Y": 240,
+            "Width": 106,
+            "Height": 63,
+            "TextId": "__SingleUse_1RCL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_IWEA",
+              "UseBuffer": true,
+              "BufferSize": 15
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 521,
+            "Y": 256,
+            "Width": 137,
+            "Height": 24,
+            "TextId": "__SingleUse_63FB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_5M6Q",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextProgress",
+            "Name": "textProgress2",
+            "X": 118,
+            "Y": 171,
+            "Width": 175,
+            "Height": 50,
+            "TextId": "__SingleUse_0R8C",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 0,
+            "Preset": "alternate_theme\\presets\\textprogress\\rounded.json",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_textprogress_backgrounds_rounded_light.png",
+            "IndicatorPositionX": 12,
+            "IndicatorPositionY": 10,
+            "IndicatorPositionWidth": 150,
+            "IndicatorPositionHeight": 30,
+            "ProgressRangeMax": 400,
+            "ProgressInitialValue": 60
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 299,
+            "Y": 373,
+            "Width": 202,
+            "Height": 24,
+            "TextId": "__SingleUse_IA3T",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 15
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 190,
+            "Y": 291,
+            "Width": 13,
+            "Height": 24,
+            "TextId": "__SingleUse_ZJIL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -107,6 +206,216 @@
             }
           }
         ]
+      },
+      {
+        "Name": "Screen2",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": -138,
+            "Y": 1,
+            "Width": 1024,
+            "Height": 600,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_1024x600_spotlights.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 186,
+            "Y": 216,
+            "Width": 429,
+            "Height": 48,
+            "TextId": "__SingleUse_MENF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "plugConnected",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen3"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "plugScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen3",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 1024,
+            "Height": 600,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_1024x600_spotlights.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 257,
+            "Y": 216,
+            "Width": 318,
+            "Height": 48,
+            "TextId": "__SingleUse_D10V",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "goToShutdown",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen4"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "shutdownScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen4",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 1024,
+            "Height": 600,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_1024x600_spotlights.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 169,
+            "Y": 216,
+            "Width": 462,
+            "Height": 48,
+            "TextId": "__SingleUse_EOO2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "goToPrecharging",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen5"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "prechargeScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen5",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 1024,
+            "Height": 600,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_1024x600_spotlights.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 281,
+            "Y": 216,
+            "Width": 238,
+            "Height": 48,
+            "TextId": "__SingleUse_87YX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "gotocharging",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "chargingScreen"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [],
@@ -116,7 +425,7 @@
       "Height": 480
     },
     "SelectedColorDepth": 24,
-    "StartupScreenName": "Screen1",
+    "StartupScreenName": "Screen2",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

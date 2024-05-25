@@ -17,7 +17,13 @@ public:
 
     float getSoC();
   bool getState();
-
+  float getVolts();
+  float getCurr();
+  int getPlug();
+  int getShutdownFlag();
+  int getPrechargingFlag();
+  int getChargingFlag();
+  int getTimeRemaining();
 protected:
     ModelListener* modelListener;
   float outputVoltage;

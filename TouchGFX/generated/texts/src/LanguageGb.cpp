@@ -10,8 +10,19 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 // Remap all strings
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
-    9,  // T___SINGLEUSE_TZHV: "<> %"
-    13, // T___SINGLEUSE_R93R: "Idle"
-    0,  // T_1: "Charging"
-    0   // T___SINGLEUSE_KD3T: "Charging"
+    20,  // T___SINGLEUSE_ZJIL: ""
+    0,   // T___SINGLEUSE_IA3T: "<> Time Remaining (s)"
+    81,  // T___SINGLEUSE_87YX: "Precharging"
+    21,  // T___SINGLEUSE_EOO2: "Shutdown Circuit Open"
+    64,  // T___SINGLEUSE_D10V: "Waiting for Plug"
+    43,  // T___SINGLEUSE_MENF: "Car Not Connected :("
+    110, // T___SINGLEUSE_0R8C: "<> %"
+    119, // T___SINGLEUSE_5M6Q: "0"
+    93,  // T___SINGLEUSE_63FB: "<> A"
+    119, // T___SINGLEUSE_IWEA: "0"
+    97,  // T___SINGLEUSE_1RCL: "<> V"
+    110, // T___SINGLEUSE_TZHV: "<> %"
+    114, // T___SINGLEUSE_R93R: "Idle"
+    101, // T_1: "Charging"
+    101  // T___SINGLEUSE_KD3T: "Charging"
 };
