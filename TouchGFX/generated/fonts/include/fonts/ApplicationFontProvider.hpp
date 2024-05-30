@@ -18,16 +18,18 @@ struct Typography
     static const touchgfx::FontId SMALL = 2;
     static const touchgfx::FontId TYPOGRAPHY_00 = 3;
     static const touchgfx::FontId TYPOGRAPHY_01 = 4;
+    static const touchgfx::FontId TYPOGRAPHY_02 = 5;
 };
 
 struct TypographyFontIndex
 {
-    static const touchgfx::FontId DEFAULT = 0;       // verdana_20_4bpp
-    static const touchgfx::FontId LARGE = 1;         // verdana_40_4bpp
+    static const touchgfx::FontId DEFAULT = 0;       // gadugi_30_4bpp
+    static const touchgfx::FontId LARGE = 1;         // SFPRODISPLAYLIGHTITALIC_OTF_40_4bpp
     static const touchgfx::FontId SMALL = 2;         // verdana_10_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_00 = 3; // verdanaz_20_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_00 = 3; // SFPRODISPLAYREGULAR_OTF_30_4bpp
     static const touchgfx::FontId TYPOGRAPHY_01 = 4; // LFAXDI_TTF_30_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 5;
+    static const touchgfx::FontId TYPOGRAPHY_02 = 5; // SFPRODISPLAYULTRALIGHTITALIC_OTF_30_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 6;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

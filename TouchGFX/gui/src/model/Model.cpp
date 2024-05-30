@@ -14,6 +14,10 @@ uint16_t shutdownFlag = 0;
 uint16_t prechargingFlag = 0;
 uint16_t chargingFlag = 0;
 uint16_t timeRemaining = 0;
+int amsFlag = 0;
+int imdFlag = 0;
+uint16_t packVoltage = 0;
+uint16_t initialTime = 65535;
 
 Model::Model() : modelListener(0), outputVoltage(252.0f), outputCurrent(10.0f), faultVector(0x80)
 {
@@ -54,15 +58,18 @@ void Model::receivePacket() {
      faultVector = RxData[4];
     }
     if (id == 0x420){
-      shutdownFlag = *((uint16_t*)&data[0]);
-      shutdownFlag = shutdownFlag>>4;
-      prechargingFlag = *((uint16_t*)&data[0]);
-      prechargingFlag = prechargingFlag>>3;
-      chargingFlag = *((uint16_t*)&data[0]);
-      chargingFlag = chargingFlag>>2;
-      outputVoltage = static_cast<float>(*((uint16_t*)&data[1])) * 0.1f;
-      stateofcharge = static_cast<float>(*((uint16_t*)&data[2])) * 0.1f;
-      timeRemaining = *((uint16_t*)&data[3]);
+      uint16_t flags = *((uint16_t*)&data[0]);
+      shutdownFlag = (flags>>4) & 1;
+      prechargingFlag = (flags>>3) & 1;
+      chargingFlag = (flags>>2)&1;
+      amsFlag = (flags>>1)&1;
+      imdFlag = (flags)&1;
+      packVoltage = static_cast<float>(*((uint16_t*)&data[2])) * 0.1f;
+      stateofcharge = static_cast<float>(*((uint16_t*)&data[4])) * 0.1f;
+      timeRemaining = *((uint16_t*)&data[6]);
+      if (initialTime>timeRemaining){
+        initialTime = timeRemaining;
+      }
     }
 
   }
@@ -121,7 +128,7 @@ void Model::tick()
 #endif
 #ifndef SIMULATOR
   receivePacket();
-  sendPacket();
+  //sendPacket();
 #endif
 }
 
@@ -134,7 +141,8 @@ bool Model::getState() {
 }
 
 float Model::getVolts(){
-  return outputVoltage;
+  //return outputVoltage;
+  return packVoltage;
 }
 
 float Model::getCurr(){
@@ -159,4 +167,18 @@ int Model::getChargingFlag(){
 
 int Model::getTimeRemaining(){
   return timeRemaining;
+}
+
+int Model::getAMS(){
+  return 1;
+  //return amsFlag;
+}
+
+int Model::getIMD(){
+  return 1;
+  //return imdFlag;
+}
+
+int Model::getTimeElapsed(){
+  return initialTime;
 }

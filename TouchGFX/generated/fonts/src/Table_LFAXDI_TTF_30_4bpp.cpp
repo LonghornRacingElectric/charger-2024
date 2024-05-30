@@ -4,18 +4,7 @@
 
 FONT_TABLE_LOCATION_FLASH_PRAGMA
 KEEP extern const touchgfx::GlyphNode glyphs_LFAXDI_TTF_30_4bpp[] FONT_TABLE_LOCATION_FLASH_ATTRIBUTE = {
-    {     0, 0x003F,  15,  23,  23,   4,  16,   0,   0, 0x00 }, // question
-    {   184, 0x0043,  21,  24,  23,   3,  22,   0,   0, 0x00 }, // C
-    {   448, 0x0049,  14,  22,  22,   1,  11,   0,   0, 0x00 }, // I
-    {   602, 0x0061,  18,  17,  17,   2,  20,   0,   0, 0x00 }, // a
-    {   755, 0x0064,  20,  24,  24,   2,  20,   0,   0, 0x00 }, // d
-    {   995, 0x0065,  16,  17,  17,   2,  17,   0,   0, 0x00 }, // e
-    {  1131, 0x0067,  19,  23,  17,   1,  19,   0,   0, 0x00 }, // g
-    {  1361, 0x0068,  18,  24,  24,   3,  20,   0,   0, 0x00 }, // h
-    {  1577, 0x0069,   9,  24,  24,   3,  10,   0,   0, 0x00 }, // i
-    {  1697, 0x006C,   9,  24,  24,   3,  10,   0,   0, 0x00 }, // l
-    {  1817, 0x006E,  17,  17,  17,   3,  20,   0,   0, 0x00 }, // n
-    {  1970, 0x0072,  15,  17,  17,   3,  16,   0,   0, 0x00 }  // r
+    {     0, 0x003F,  15,  23,  23,   4,  16,   0,   0, 0x00 } // question
 };
 
 // LFAXDI_TTF_30_4bpp
@@ -33,6 +22,6 @@ touchgfx::GeneratedFont& getFont_LFAXDI_TTF_30_4bpp();
 
 touchgfx::GeneratedFont& getFont_LFAXDI_TTF_30_4bpp()
 {
-    static touchgfx::GeneratedFont LFAXDI_TTF_30_4bpp(glyphs_LFAXDI_TTF_30_4bpp, 12, 36, 30, 0, 0, 4, 1, 0, 4, unicodes_LFAXDI_TTF_30_4bpp, kerning_LFAXDI_TTF_30_4bpp, 63, 0, 0, 0);
+    static touchgfx::GeneratedFont LFAXDI_TTF_30_4bpp(glyphs_LFAXDI_TTF_30_4bpp, 1, 30, 30, 0, 0, 4, 1, 0, 3, unicodes_LFAXDI_TTF_30_4bpp, kerning_LFAXDI_TTF_30_4bpp, 63, 0, 0, 0);
     return LFAXDI_TTF_30_4bpp;
 }

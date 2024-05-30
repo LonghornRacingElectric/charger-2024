@@ -10,20 +10,23 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
     switch (typography)
     {
     case Typography::DEFAULT:
-        // verdana_20_4bpp
+        // gadugi_30_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[0]);
     case Typography::LARGE:
-        // verdana_40_4bpp
+        // SFPRODISPLAYLIGHTITALIC_OTF_40_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[1]);
     case Typography::SMALL:
         // verdana_10_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[2]);
     case Typography::TYPOGRAPHY_00:
-        // verdanaz_20_4bpp
+        // SFPRODISPLAYREGULAR_OTF_30_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[3]);
     case Typography::TYPOGRAPHY_01:
         // LFAXDI_TTF_30_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[4]);
+    case Typography::TYPOGRAPHY_02:
+        // SFPRODISPLAYULTRALIGHTITALIC_OTF_30_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[5]);
     default:
         return 0;
     }

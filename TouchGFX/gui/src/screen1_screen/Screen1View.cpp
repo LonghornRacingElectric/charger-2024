@@ -1,4 +1,5 @@
 #include <gui/screen1_screen/Screen1View.hpp>
+#include "stm32f7xx_hal.h"
 
 Screen1View::Screen1View()
 {
@@ -21,6 +22,22 @@ void Screen1View::bababooey() {
   setVoltage(presenter->getVoltss());
   setCurrent(presenter->getCurrent());
   setTime(presenter->getTime());
+  if (presenter->getTime() == 0){
+    static_cast<FrontendApplication*>(Application::getInstance())->gotoScreen6ScreenNoTransition();
+    application().gotoScreen6ScreenNoTransition();
+  }
+  if (presenter->getAMS() == 1){
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
+  }
+  else{
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
+  }
+  if (presenter->getIMD() == 1){
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
+  }
+  else{
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
+  }
 }
 
 void Screen1View::setCharge(int charge) {
@@ -29,13 +46,13 @@ void Screen1View::setCharge(int charge) {
 }
 
 void Screen1View::setState(bool state) {
-  idleText.setVisible(false);
-  chargingText.setVisible(true);
+//  idleText.setVisible(false);
+//  chargingText.setVisible(true);
 }
 
 void Screen1View::setVoltage(int voltage){
   Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%d",voltage);
-  textProgress2.setValue(voltage);
+//  textProgress2.setValue(voltage);
   textArea1.invalidate();
 }
 

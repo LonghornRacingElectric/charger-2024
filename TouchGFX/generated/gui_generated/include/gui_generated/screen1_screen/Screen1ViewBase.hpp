@@ -42,14 +42,13 @@ protected:
     touchgfx::Image image1;
     touchgfx::Image image2;
     touchgfx::TextArea chargingText;
-    touchgfx::TextArea idleText;
     touchgfx::ImageProgress battProgress;
     touchgfx::TextProgress textProgress1;
     touchgfx::TextAreaWithOneWildcard textArea1;
     touchgfx::TextAreaWithOneWildcard textArea2;
     touchgfx::TextProgress textProgress2;
     touchgfx::TextAreaWithOneWildcard textArea3;
-    touchgfx::TextArea textArea4;
+    touchgfx::TextArea idleText;
 
     /*
      * Wildcard Buffers

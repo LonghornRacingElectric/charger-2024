@@ -47,6 +47,16 @@ public:
       return model->getTimeRemaining();
     }
 
+    int getAMS(){
+      return model->getAMS();
+    }
+
+    int getIMD(){
+      return model->getIMD();
+    }
+
+
+
 private:
     Screen1Presenter();
 

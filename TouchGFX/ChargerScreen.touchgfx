@@ -7,9 +7,11 @@
           {
             "Type": "Image",
             "Name": "image1",
-            "Width": 800,
-            "Height": 480,
-            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_800x480_spotlights.png"
+            "X": -5,
+            "Y": -9,
+            "Width": 1024,
+            "Height": 600,
+            "RelativeFilename": "__generated\\light_theme_images_backgrounds_1024x600_blurry_droplets.png"
           },
           {
             "Type": "Image",
@@ -18,38 +20,21 @@
             "Y": 191,
             "Width": 214,
             "Height": 150,
-            "RelativeFilename": "__generated\\alternate_theme_images_containers_small_wide_dark.png"
+            "RelativeFilename": "__generated\\light_theme_images_containers_small_wide_neutral.png"
           },
           {
             "Type": "TextArea",
             "Name": "chargingText",
-            "X": 327,
+            "X": 335,
             "Y": 197,
-            "Width": 146,
+            "Width": 108,
             "Height": 36,
             "TextId": "__SingleUse_KD3T",
             "TextRotation": "0",
             "Color": {
-              "Red": 214,
-              "Green": 173,
-              "Blue": 36
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "idleText",
-            "X": 371,
-            "Y": 197,
-            "Width": 58,
-            "Height": 36,
-            "Visible": false,
-            "TextId": "__SingleUse_R93R",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 214,
-              "Green": 173,
-              "Blue": 36
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
             "AutoSize": true
           },
@@ -60,10 +45,10 @@
             "Y": 240,
             "Width": 110,
             "Height": 40,
-            "FileNameProgress": "__generated\\alternate_theme_images_widgets_imageprogress_styled_batteries_battery_large_action.png",
+            "FileNameProgress": "__generated\\clay_theme_images_widgets_imageprogress_styled_batteries_battery_large_active.png",
             "AnchorAtZero": true,
             "Direction": "Right",
-            "FileNameBackground": "__generated\\alternate_theme_images_widgets_imageprogress_styled_batteries_battery_large.png",
+            "FileNameBackground": "__generated\\light_theme_images_widgets_imageprogress_styled_batteries_battery_large.png",
             "IndicatorPositionX": 5,
             "IndicatorPositionY": 5,
             "IndicatorPositionWidth": 94,
@@ -75,17 +60,16 @@
             "Type": "TextProgress",
             "Name": "textProgress1",
             "X": 313,
-            "Y": 286,
+            "Y": 283,
             "Width": 175,
             "Height": 50,
             "TextId": "__SingleUse_TZHV",
             "Color": {
-              "Red": 214,
-              "Green": 173,
-              "Blue": 36
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
-            "Preset": "alternate_theme\\presets\\textprogress\\rounded.json",
-            "FileNameBackground": "__generated\\alternate_theme_images_widgets_textprogress_backgrounds_rounded_light.png",
+            "FileNameBackground": "__generated\\light_theme_images_widgets_textprogress_backgrounds_rounded_neutral.png",
             "IndicatorPositionX": 12,
             "IndicatorPositionY": 10,
             "IndicatorPositionWidth": 150,
@@ -96,7 +80,7 @@
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 176,
+            "X": 205,
             "Y": 240,
             "Width": 106,
             "Height": 63,
@@ -116,10 +100,10 @@
           {
             "Type": "TextArea",
             "Name": "textArea2",
-            "X": 521,
-            "Y": 256,
+            "X": 533,
+            "Y": 240,
             "Width": 137,
-            "Height": 24,
+            "Height": 68,
             "TextId": "__SingleUse_63FB",
             "TextRotation": "0",
             "Color": {
@@ -159,10 +143,10 @@
           {
             "Type": "TextArea",
             "Name": "textArea3",
-            "X": 299,
-            "Y": 373,
-            "Width": 202,
-            "Height": 24,
+            "X": 325,
+            "Y": 363,
+            "Width": 233,
+            "Height": 72,
             "TextId": "__SingleUse_IA3T",
             "TextRotation": "0",
             "Color": {
@@ -178,12 +162,13 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea4",
-            "X": 190,
-            "Y": 291,
-            "Width": 13,
-            "Height": 24,
-            "TextId": "__SingleUse_ZJIL",
+            "Name": "idleText",
+            "X": 371,
+            "Y": 197,
+            "Width": 40,
+            "Height": 36,
+            "Visible": false,
+            "TextId": "__SingleUse_R93R",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -204,6 +189,17 @@
               "Type": "ActionCustom",
               "FunctionName": "bababooey"
             }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen6"
+            }
           }
         ]
       },
@@ -214,17 +210,16 @@
             "Type": "Image",
             "Name": "image1",
             "X": -138,
-            "Y": 1,
             "Width": 1024,
             "Height": 600,
-            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_1024x600_spotlights.png"
+            "RelativeFilename": "__generated\\light_theme_images_backgrounds_1024x600_blurry_droplets.png"
           },
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 186,
+            "X": 223,
             "Y": 216,
-            "Width": 429,
+            "Width": 354,
             "Height": 48,
             "TextId": "__SingleUse_MENF",
             "TextRotation": "0",
@@ -269,14 +264,14 @@
             "Name": "image1",
             "Width": 1024,
             "Height": 600,
-            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_1024x600_spotlights.png"
+            "RelativeFilename": "__generated\\light_theme_images_backgrounds_1024x600_blurry_droplets.png"
           },
           {
             "Type": "TextArea",
             "Name": "textArea1",
             "X": 257,
             "Y": 216,
-            "Width": 318,
+            "Width": 257,
             "Height": 48,
             "TextId": "__SingleUse_D10V",
             "TextRotation": "0",
@@ -321,14 +316,14 @@
             "Name": "image1",
             "Width": 1024,
             "Height": 600,
-            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_1024x600_spotlights.png"
+            "RelativeFilename": "__generated\\light_theme_images_backgrounds_1024x600_blurry_droplets.png"
           },
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 169,
+            "X": 208,
             "Y": 216,
-            "Width": 462,
+            "Width": 382,
             "Height": 48,
             "TextId": "__SingleUse_EOO2",
             "TextRotation": "0",
@@ -373,14 +368,14 @@
             "Name": "image1",
             "Width": 1024,
             "Height": 600,
-            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_1024x600_spotlights.png"
+            "RelativeFilename": "__generated\\light_theme_images_backgrounds_1024x600_blurry_droplets.png"
           },
           {
             "Type": "TextArea",
             "Name": "textArea1",
             "X": 281,
             "Y": 216,
-            "Width": 238,
+            "Width": 200,
             "Height": 48,
             "TextId": "__SingleUse_87YX",
             "TextRotation": "0",
@@ -413,6 +408,67 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "chargingScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen6",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 1024,
+            "Height": 600,
+            "RelativeFilename": "__generated\\light_theme_images_backgrounds_1024x600_blurry_droplets.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 226,
+            "Y": 216,
+            "Width": 281,
+            "Height": 48,
+            "TextId": "__SingleUse_5AWS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 255,
+            "Y": 288,
+            "Width": 225,
+            "Height": 36,
+            "TextId": "__SingleUse_L25E",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 15
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "totalTime"
             }
           }
         ]

@@ -232,6 +232,18 @@
     <Filter Include="Source Files\generated\gui_generated\screen2_screen">
       <UniqueIdentifier>3A35B07E-0E3C-4F46-9222-E8B0620F326C</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\screen6_screen">
+      <UniqueIdentifier>85319252-2FA3-48A5-16E8-38220BAD6640</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screen6_screen">
+      <UniqueIdentifier>7CCA0145-5BEA-01D3-B6C0-09F2181F85D5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screen6_screen">
+      <UniqueIdentifier>868914D8-F4F4-D45B-D14B-A1829A0E80E9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screen6_screen">
+      <UniqueIdentifier>BECB6EC6-523C-6F30-518A-053DF2C198DF</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -308,6 +320,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\screen5_screen\Screen5ViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\screen5_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screen6_screen\Screen6Presenter.cpp">
+      <Filter>Source Files\gui\screen6_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screen6_screen\Screen6View.cpp">
+      <Filter>Source Files\gui\screen6_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screen6_screen\Screen6ViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screen6_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -795,6 +816,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen5_screen\Screen5ViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\screen5_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screen6_screen\Screen6Presenter.hpp">
+      <Filter>Header Files\gui\screen6_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screen6_screen\Screen6View.hpp">
+      <Filter>Header Files\gui\screen6_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen6_screen\Screen6ViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screen6_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

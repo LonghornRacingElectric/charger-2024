@@ -24,6 +24,9 @@ public:
   int getPrechargingFlag();
   int getChargingFlag();
   int getTimeRemaining();
+  int getAMS();
+  int getIMD();
+  int getTimeElapsed();
 protected:
     ModelListener* modelListener;
   float outputVoltage;
