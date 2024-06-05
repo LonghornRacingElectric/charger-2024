@@ -145,7 +145,7 @@
             "Name": "textArea3",
             "X": 325,
             "Y": 363,
-            "Width": 233,
+            "Width": 234,
             "Height": 72,
             "TextId": "__SingleUse_IA3T",
             "TextRotation": "0",
@@ -441,9 +441,9 @@
           {
             "Type": "TextArea",
             "Name": "textArea2",
-            "X": 255,
-            "Y": 288,
-            "Width": 225,
+            "X": 253,
+            "Y": 282,
+            "Width": 226,
             "Height": 36,
             "TextId": "__SingleUse_L25E",
             "TextRotation": "0",
@@ -456,7 +456,8 @@
             "Wildcard1": {
               "UseBuffer": true,
               "BufferSize": 15
-            }
+            },
+            "WideTextAction": 6
           }
         ],
         "Interactions": [

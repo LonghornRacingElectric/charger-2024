@@ -170,13 +170,13 @@ int Model::getTimeRemaining(){
 }
 
 int Model::getAMS(){
-  return 1;
-  //return amsFlag;
+  //return 1;
+  return amsFlag;
 }
 
 int Model::getIMD(){
-  return 1;
-  //return imdFlag;
+  //return 1;
+  return imdFlag;
 }
 
 int Model::getTimeElapsed(){

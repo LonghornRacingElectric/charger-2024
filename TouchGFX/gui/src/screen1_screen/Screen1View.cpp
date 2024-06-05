@@ -1,5 +1,6 @@
 #include <gui/screen1_screen/Screen1View.hpp>
-#include "stm32f7xx_hal.h"
+#include "stm32u5xx_hal.h"
+#include <stm32u5a9xx.h>
 
 Screen1View::Screen1View()
 {
@@ -27,18 +28,22 @@ void Screen1View::bababooey() {
     application().gotoScreen6ScreenNoTransition();
   }
   if (presenter->getAMS() == 1){
-      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
+         HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_SET);
+
   }
   else{
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_RESET);
+
   }
   if (presenter->getIMD() == 1){
-      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
   }
   else{
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
   }
 }
+
+
 
 void Screen1View::setCharge(int charge) {
   battProgress.setValue(charge);

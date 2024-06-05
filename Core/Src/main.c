@@ -89,7 +89,6 @@ static void MX_NVIC_Init(void);
   */
 int main(void)
 {
-  
   /* USER CODE BEGIN 1 */
 
 
@@ -134,7 +133,6 @@ int main(void)
   MX_I2C2_Init();
   MX_I2C4_Init();
   MX_ICACHE_Init();
-  MX_LPTIM2_Init();
   MX_LTDC_Init();
   MX_OCTOSPI1_Init();
   MX_RNG_Init();
@@ -150,6 +148,7 @@ int main(void)
   MX_USART3_UART_Init();
   MX_USART6_UART_Init();
   MX_USB_OTG_HS_USB_Init();
+  MX_LPTIM2_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();

@@ -35,14 +35,14 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>Riverdi_50STM32U5A9.ioc</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Riverdi_50STM32U5A9.ioc</locationURI>
-		</link>
-		<link>
 			<name>MX25LM51245G_STM32U599J-DK.stldr</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/gcc/MX25LM51245G_STM32U599J-DK.stldr</locationURI>
+		</link>
+		<link>
+			<name>Riverdi_50STM32U5A9.ioc</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Riverdi_50STM32U5A9.ioc</locationURI>
 		</link>
 		<link>
 			<name>Drivers/BSP</name>
