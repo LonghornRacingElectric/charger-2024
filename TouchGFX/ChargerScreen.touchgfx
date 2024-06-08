@@ -144,8 +144,8 @@
             "Name": "textArea3",
             "X": 325,
             "Y": 363,
-            "Width": 234,
-            "Height": 72,
+            "Width": 246,
+            "Height": 36,
             "TextId": "__SingleUse_IA3T",
             "TextRotation": "0",
             "Color": {
@@ -155,8 +155,14 @@
             },
             "AutoSize": true,
             "Wildcard1": {
+              "TextId": "__SingleUse_T0RF",
               "UseBuffer": true,
               "BufferSize": 15
+            },
+            "Wildcard2": {
+              "TextId": "__SingleUse_H4HE",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {

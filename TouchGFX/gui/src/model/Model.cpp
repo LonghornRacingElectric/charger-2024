@@ -9,15 +9,11 @@
 int counter = 0;
 int longCounter = 0;
 float stateofcharge = 0;
-int plugFlag = 0;
-int shutdownFlag = 0;
-int prechargingFlag = 0;
-int chargingFlag = 0;
+int flagsArr[6];
 int timeRemaining = 0;
-int amsFlag = 0;
-int imdFlag = 0;
 int packVoltage = 0;
 int initialTime = 65535;
+int flags = 0;
 
 Model::Model() : modelListener(0), outputVoltage(252.0f), outputCurrent(10.0f), faultVector(0x80)
 {
@@ -31,7 +27,6 @@ void Model::receivePacket() {
   static bool started = false;
   static uint32_t err;
 
-  static uint8_t data[8];
   if(!started) {
     err = HAL_FDCAN_Start(&hfdcan1);
     started = true;
@@ -39,8 +34,10 @@ void Model::receivePacket() {
   }
 
 
-  //uint32_t fillLevel = HAL_FDCAN_GetRxFifoFillLevel(&hfdcan1, FDCAN_RX_FIFO0);
-  err = HAL_FDCAN_GetRxMessage(&hfdcan1, FDCAN_RX_FIFO0, &RxHeader, RxData);
+  uint32_t fillLevel = HAL_FDCAN_GetRxFifoFillLevel(&hfdcan1, FDCAN_RX_FIFO0);
+  for (int i = 0; i <fillLevel; i++){
+      err = HAL_FDCAN_GetRxMessage(&hfdcan1, FDCAN_RX_FIFO0, &RxHeader, RxData);
+
   if(err) {
     // outputVoltage = -6.0f;
     // while (err) {
@@ -52,26 +49,26 @@ void Model::receivePacket() {
     //outputVoltage = fillLevel * 6.0f; //450.0f;
     faultVector = 0;
     if(id == 0x18FF50E5) {
-         plugFlag = 1;
      outputVoltage = static_cast<float>((RxData[0] << 8) | RxData[1]) * 0.1f;
      outputCurrent = static_cast<float>((RxData[2] << 8) | RxData[3]) * 0.1f;
      faultVector = RxData[4];
     }
     if (id == 0x420){
-      plugFlag = 1;
-      uint16_t flags = *((uint16_t*)&data[0]);
-      shutdownFlag = (flags>>4) & 1;
-      prechargingFlag = (flags>>3) & 1;
-      chargingFlag = (flags>>2)&1;
-      amsFlag = (flags>>1)&1;
-      imdFlag = (flags)&1;
-      packVoltage = static_cast<float>(*((uint16_t*)&data[2])) * 0.1f;
-      stateofcharge = static_cast<float>(*((uint16_t*)&data[4])) * 0.1f;
-      timeRemaining = *((uint16_t*)&data[6]);
+      flagsArr[1] = 1; //car is connected
+       flags = *((uint16_t*)&RxData[0]);
+      flagsArr[2] = (flags>>4) & 1;  //plug is connected
+      flagsArr[3] = (flags>>3) & 1; //shutdown circuit closed
+      flagsArr[4] = (flags>>2)&1; //done precharging
+      flagsArr[5] = (flags>>1)&1; //ams flag
+      flagsArr[6] = (flags)&1; //imd flag
+      packVoltage = static_cast<float>(*((uint16_t*)&RxData[2])) * 0.1f;
+      stateofcharge = static_cast<float>(*((uint16_t*)&RxData[4])) * 0.1f;
+      timeRemaining = *((uint16_t*)&RxData[6]);
       if (initialTime>timeRemaining){
         initialTime = timeRemaining;
       }
     }
+  }
 
   }
 }
@@ -142,28 +139,28 @@ bool Model::getState() {
 }
 
 float Model::getVolts(){
-  //return outputVoltage;
-  return packVoltage;
+  return outputVoltage;
+  //return packVoltage;
 }
 
 float Model::getCurr(){
   return outputCurrent;
 }
 
+int Model::isConnected(){
+  return flagsArr[1];
+}
+
 int Model::getPlug(){
-  return plugFlag;
+  return flagsArr[2];
 }
 
-int Model::getShutdownFlag(){
-  return shutdownFlag;
-}
-
-int Model::getPrechargingFlag(){
-  return prechargingFlag;
+int Model::shutdownClosed(){
+  return flagsArr[3];
 }
 
 int Model::getChargingFlag(){
-  return chargingFlag;
+  return flagsArr[4];
 }
 
 int Model::getTimeRemaining(){
@@ -172,14 +169,22 @@ int Model::getTimeRemaining(){
 
 int Model::getAMS(){
   //return 1;
-  return amsFlag;
+  return flagsArr[5];
 }
 
 int Model::getIMD(){
   //return 1;
-  return imdFlag;
+  return flagsArr[6];
 }
 
 int Model::getTimeElapsed(){
   return initialTime;
+}
+
+ int Model::getSC2Status(){
+  return flagsArr[0];
+ }
+
+void Model::setSCStatus(int status){
+    flagsArr[0] = status;
 }

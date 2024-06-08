@@ -57,6 +57,16 @@ public:
 
 
 
+void setSCStatus(int status){
+  model->setSCStatus(status);
+}
+
+    int shutdownClosed(){
+        return model->shutdownClosed();
+    }
+
+
+
 private:
     Screen1Presenter();
 

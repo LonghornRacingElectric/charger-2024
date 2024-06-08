@@ -6,6 +6,12 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_T0RF" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_H4HE" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
       <Text Id="__SingleUse_0R8C" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">&lt;&gt; %</Translation>
       </Text>
@@ -13,7 +19,7 @@
         <Translation Language="GB">Idle</Translation>
       </Text>
       <Text Id="__SingleUse_IA3T" Alignment="Left" TypographyId="Typography_02">
-        <Translation Language="GB">&lt;value&gt; Time Remaining (s)&#10;</Translation>
+        <Translation Language="GB">&lt;value&gt; :&lt;value&gt; Time Remaining</Translation>
       </Text>
       <Text Id="__SingleUse_L25E" Alignment="Left" TypographyId="Typography_02">
         <Translation Language="GB">Charging Time: &lt;value&gt; (s)</Translation>
@@ -62,6 +68,6 @@
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography_00" Font="SFPRODISPLAYREGULAR.OTF" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography_01" Font="LFAXDI.TTF" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Typography_02" Font="SFPRODISPLAYULTRALIGHTITALIC.OTF" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789." />
+    <Typography Id="Typography_02" Font="SFPRODISPLAYULTRALIGHTITALIC.OTF" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0-9, A-Z" WidgetWildcardCharacters="0123456789." />
   </Typographies>
 </TextDatabase>

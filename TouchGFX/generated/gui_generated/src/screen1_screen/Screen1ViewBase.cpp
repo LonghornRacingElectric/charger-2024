@@ -74,8 +74,10 @@ Screen1ViewBase::Screen1ViewBase()
     textArea3.setXY(325, 363);
     textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea3.setLinespacing(0);
-    textArea3Buffer[0] = 0;
-    textArea3.setWildcard(textArea3Buffer);
+    touchgfx::Unicode::snprintf(textArea3Buffer1, TEXTAREA3BUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_T0RF).getText());
+    textArea3.setWildcard1(textArea3Buffer1);
+    touchgfx::Unicode::snprintf(textArea3Buffer2, TEXTAREA3BUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_H4HE).getText());
+    textArea3.setWildcard2(textArea3Buffer2);
     textArea3.resizeToCurrentText();
     textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IA3T));
     add(textArea3);

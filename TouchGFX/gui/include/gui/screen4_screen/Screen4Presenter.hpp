@@ -27,8 +27,23 @@ public:
 
     virtual ~Screen4Presenter() {}
 
-    int getPrechargeFlag(){
-        return model->getPrechargingFlag();
+    int shutdownClosed(){
+        return model->shutdownClosed();
+    }
+
+         int getSC2Status(){
+  return model->getSC2Status();
+ }
+ 
+    int getPlug(){
+        return model->getPlug();
+    }
+            int getAMS(){
+      return model->getAMS();
+    }
+
+    int getIMD(){
+      return model->getIMD();
     }
 
 private:

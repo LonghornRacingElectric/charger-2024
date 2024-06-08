@@ -4,6 +4,7 @@
 
 Screen1View::Screen1View()
 {
+  
 
 }
 
@@ -26,6 +27,10 @@ void Screen1View::bababooey() {
   if (presenter->getTime() == 0){
     static_cast<FrontendApplication*>(Application::getInstance())->gotoScreen6ScreenNoTransition();
     application().gotoScreen6ScreenNoTransition();
+  }
+  if (presenter->shutdownClosed() == 0){
+    presenter->setSCStatus(1);
+    static_cast<FrontendApplication*>(Application::getInstance())->gotoScreen4ScreenNoTransition();
   }
   if (presenter->getAMS() == 1){
          HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_RESET);
@@ -67,6 +72,12 @@ void Screen1View::setCurrent(int current){
 }
 
 void Screen1View::setTime(int time){
-  Unicode::snprintf(textArea3Buffer, TEXTAREA1_SIZE, "%d", time);
+  int minutes = time/60;
+  int seconds = time%60;
+  
+  textArea3.setWildcard1((const Unicode::UnicodeChar*) minutes);
+  textArea3.setWildcard2((const Unicode::UnicodeChar*) seconds);
+  //Unicode::snprintf(textArea3Buffer, TEXTAREA1_SIZE, "%d", minutes);
   textArea3.invalidate();
+  //Unicode::snprintf(textArea)
 }

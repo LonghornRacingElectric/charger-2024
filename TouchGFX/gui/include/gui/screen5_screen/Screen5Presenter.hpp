@@ -29,6 +29,13 @@ public:
     int getChargeFlag(){
         return model->getChargingFlag();
     }
+        int getAMS(){
+      return model->getAMS();
+    }
+
+    int getIMD(){
+      return model->getIMD();
+    }
 
 private:
     Screen5Presenter();

@@ -17,11 +17,10 @@ void Screen2View::tearDownScreen()
 }
 
 void Screen2View::plugScreen(){
-    if(presenter->getPlugFlag() == 1){
+    if(presenter->isConnected() == 1){
         static_cast<FrontendApplication*>(Application::getInstance())->gotoScreen3ScreenNoTransition();
         //application().FrontendApplicationBase::gotoScreen3ScreenNoTransition();
     }
-
      // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
      //   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
 

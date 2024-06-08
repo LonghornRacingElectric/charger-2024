@@ -26,8 +26,19 @@ public:
     virtual void deactivate();
 
     virtual ~Screen3Presenter() {}
-    int getShutdown(){
-        return model->getShutdownFlag();
+    int getPlug(){
+        return model->getPlug();
+    }
+
+    int isConnected(){
+        return model->isConnected();
+    }
+        int getAMS(){
+      return model->getAMS();
+    }
+
+    int getIMD(){
+      return model->getIMD();
     }
 
 private:

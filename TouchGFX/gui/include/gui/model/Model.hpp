@@ -19,14 +19,19 @@ public:
   bool getState();
   float getVolts();
   float getCurr();
-  int getPlug();
-  int getShutdownFlag();
-  int getPrechargingFlag();
-  int getChargingFlag();
+
+int isConnected();
+int getPlug();
+int shutdownClosed();
+int getChargingFlag();
+
   int getTimeRemaining();
   int getAMS();
   int getIMD();
   int getTimeElapsed();
+  int getFlag();
+ int getSC2Status();
+void setSCStatus(int status);
 protected:
     ModelListener* modelListener;
   float outputVoltage;

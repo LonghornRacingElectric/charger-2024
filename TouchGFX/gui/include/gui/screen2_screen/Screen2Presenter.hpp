@@ -26,8 +26,8 @@ public:
     virtual void deactivate();
 
     virtual ~Screen2Presenter() {}
-    int getPlugFlag(){
-        return model->getPlug();
+    int isConnected(){
+        return model->isConnected();
     }
 
 private:
