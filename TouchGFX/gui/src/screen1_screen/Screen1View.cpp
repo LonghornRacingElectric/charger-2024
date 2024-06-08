@@ -28,7 +28,7 @@ void Screen1View::bababooey() {
     application().gotoScreen6ScreenNoTransition();
   }
   if (presenter->getAMS() == 1){
-         HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_SET);
+         HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_RESET);
 
   }
   else{
@@ -36,7 +36,7 @@ void Screen1View::bababooey() {
 
   }
   if (presenter->getIMD() == 1){
-      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
   }
   else{
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);

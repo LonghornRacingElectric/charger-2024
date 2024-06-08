@@ -10,14 +10,14 @@ int counter = 0;
 int longCounter = 0;
 float stateofcharge = 0;
 int plugFlag = 0;
-uint16_t shutdownFlag = 0;
-uint16_t prechargingFlag = 0;
-uint16_t chargingFlag = 0;
-uint16_t timeRemaining = 0;
+int shutdownFlag = 0;
+int prechargingFlag = 0;
+int chargingFlag = 0;
+int timeRemaining = 0;
 int amsFlag = 0;
 int imdFlag = 0;
-uint16_t packVoltage = 0;
-uint16_t initialTime = 65535;
+int packVoltage = 0;
+int initialTime = 65535;
 
 Model::Model() : modelListener(0), outputVoltage(252.0f), outputCurrent(10.0f), faultVector(0x80)
 {
@@ -35,7 +35,6 @@ void Model::receivePacket() {
   if(!started) {
     err = HAL_FDCAN_Start(&hfdcan1);
     started = true;
-    plugFlag = 1;
     return;
   }
 
@@ -53,11 +52,13 @@ void Model::receivePacket() {
     //outputVoltage = fillLevel * 6.0f; //450.0f;
     faultVector = 0;
     if(id == 0x18FF50E5) {
+         plugFlag = 1;
      outputVoltage = static_cast<float>((RxData[0] << 8) | RxData[1]) * 0.1f;
      outputCurrent = static_cast<float>((RxData[2] << 8) | RxData[3]) * 0.1f;
      faultVector = RxData[4];
     }
     if (id == 0x420){
+      plugFlag = 1;
       uint16_t flags = *((uint16_t*)&data[0]);
       shutdownFlag = (flags>>4) & 1;
       prechargingFlag = (flags>>3) & 1;

@@ -8,7 +8,6 @@
             "Type": "Image",
             "Name": "image1",
             "X": -5,
-            "Y": -9,
             "Width": 1024,
             "Height": 600,
             "RelativeFilename": "__generated\\light_theme_images_backgrounds_1024x600_blurry_droplets.png"

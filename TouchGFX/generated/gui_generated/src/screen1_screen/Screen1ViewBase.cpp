@@ -12,7 +12,7 @@ Screen1ViewBase::Screen1ViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    image1.setXY(-5, -9);
+    image1.setXY(-5, 0);
     image1.setBitmap(touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_BACKGROUNDS_1024X600_BLURRY_DROPLETS_ID));
     add(image1);
 
