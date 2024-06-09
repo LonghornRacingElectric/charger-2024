@@ -34,8 +34,8 @@ void Model::receivePacket() {
   }
 
 
-  uint32_t fillLevel = HAL_FDCAN_GetRxFifoFillLevel(&hfdcan1, FDCAN_RX_FIFO0);
-  for (int i = 0; i <fillLevel; i++){
+  // uint32_t fillLevel = HAL_FDCAN_GetRxFifoFillLevel(&hfdcan1, FDCAN_RX_FIFO0);
+  // for (int i = 0; i <fillLevel; i++){
       err = HAL_FDCAN_GetRxMessage(&hfdcan1, FDCAN_RX_FIFO0, &RxHeader, RxData);
 
   if(err) {
@@ -68,7 +68,7 @@ void Model::receivePacket() {
         initialTime = timeRemaining;
       }
     }
-  }
+  //}
 
   }
 }

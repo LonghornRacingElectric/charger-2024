@@ -32,7 +32,7 @@ Screen1ViewBase::Screen1ViewBase()
     battProgress.setDirection(touchgfx::AbstractDirectionProgress::RIGHT);
     battProgress.setBackground(touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_WIDGETS_IMAGEPROGRESS_STYLED_BATTERIES_BATTERY_LARGE_ID));
     battProgress.setBitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_IMAGEPROGRESS_STYLED_BATTERIES_BATTERY_LARGE_ACTIVE_ID);
-    battProgress.setValue(42);
+    battProgress.setValue(30);
     battProgress.setAnchorAtZero(true);
     add(battProgress);
 
@@ -42,7 +42,7 @@ Screen1ViewBase::Screen1ViewBase()
     textProgress1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textProgress1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TZHV));
     textProgress1.setBackground(touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_WIDGETS_TEXTPROGRESS_BACKGROUNDS_ROUNDED_NEUTRAL_ID));
-    textProgress1.setValue(42);
+    textProgress1.setValue(30);
     add(textProgress1);
 
     textArea1.setPosition(205, 240, 106, 63);

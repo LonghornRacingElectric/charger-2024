@@ -8,6 +8,7 @@ class Screen1View : public Screen1ViewBase
 {
 public:
     Screen1View();
+    int ticks;
     virtual ~Screen1View() {}
     virtual void setupScreen();
     virtual void tearDownScreen();

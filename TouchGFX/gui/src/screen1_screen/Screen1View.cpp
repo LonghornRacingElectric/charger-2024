@@ -4,6 +4,7 @@
 
 Screen1View::Screen1View()
 {
+   ticks = 0;
   
 
 }
@@ -19,10 +20,17 @@ void Screen1View::tearDownScreen()
 }
 
 void Screen1View::bababooey() {
-  setCharge(presenter->getCharge());
+  ticks ++;
+  if (ticks == 100){
+    ticks = 0;
+  }
+  //setCharge(presenter->getCharge());
+  setCharge(ticks);
   setState(presenter->getState());
-  setVoltage(presenter->getVoltss());
-  setCurrent(presenter->getCurrent());
+  //setVoltage(presenter->getVoltss());
+  setVoltage(ticks);
+  setCurrent(ticks);
+  //setCurrent(presenter->getCurrent());
   setTime(presenter->getTime());
   if (presenter->getTime() == 0){
     static_cast<FrontendApplication*>(Application::getInstance())->gotoScreen6ScreenNoTransition();
@@ -53,6 +61,7 @@ void Screen1View::bababooey() {
 void Screen1View::setCharge(int charge) {
   battProgress.setValue(charge);
   textProgress1.setValue(charge);
+  
 }
 
 void Screen1View::setState(bool state) {
@@ -61,22 +70,25 @@ void Screen1View::setState(bool state) {
 }
 
 void Screen1View::setVoltage(int voltage){
+  //voltage++;
   Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%d",voltage);
 //  textProgress2.setValue(voltage);
   textArea1.invalidate();
 }
 
 void Screen1View::setCurrent(int current){
+
   Unicode::snprintf(textArea2Buffer, TEXTAREA1_SIZE, "%d",current);
   textArea2.invalidate();
 }
 
 void Screen1View::setTime(int time){
-  int minutes = time/60;
-  int seconds = time%60;
+  //int minutes = time/60;
+  //int seconds = time%60;
   
-  textArea3.setWildcard1((const Unicode::UnicodeChar*) minutes);
-  textArea3.setWildcard2((const Unicode::UnicodeChar*) seconds);
+  time++;
+  textArea3.setWildcard1((const Unicode::UnicodeChar*) time);
+  textArea3.setWildcard2((const Unicode::UnicodeChar*) time);
   //Unicode::snprintf(textArea3Buffer, TEXTAREA1_SIZE, "%d", minutes);
   textArea3.invalidate();
   //Unicode::snprintf(textArea)
